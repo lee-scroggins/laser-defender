@@ -103,6 +103,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 70b6763b1ad72954a8a59f15e68abf17, type: 3}
   shootSound: {fileID: 8300000, guid: 13af2a6ecf4fc6c4d94c66379f58fbe6, type: 3}
   shootSoundVolume: 0.05
+  deathVFX: {fileID: 3059943244959338235, guid: 9b38932a715583f42ae812899b527ddf, type: 3}
   laserPrefab: {fileID: 8359253086694692029, guid: 82b2338cf0ec43c4fbe72de28ee8c802, type: 3}
   projectileSpeed: 10
   projectileFiringSpeed: 0.1

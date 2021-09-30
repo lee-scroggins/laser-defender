@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip shootSound;
     [SerializeField] [Range(0, 1)] private float shootSoundVolume = 0.25f;
+    [SerializeField] private GameObject deathVFX;
+    [SerializeField] private float durationOfExplosion = 1f;
 
     [Header("Projectile")] [SerializeField]
     private GameObject laserPrefab;
@@ -67,9 +69,16 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        FindObjectOfType<Level>().LoadGameOver();
         Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathSoundVolume);
-        
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 
     private void Fire()
